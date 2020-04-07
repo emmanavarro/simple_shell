@@ -16,5 +16,6 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 char *_strcat(char *dest, char *src);
 
 char *prompt(void);
+char **get_token(char *str);
 
 #endif /* _SHELL_H*/
