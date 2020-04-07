@@ -1,0 +1,10 @@
+.TH Simple Shell 1 "15 April 2020" "Hippokampoiers Cohort 11 1.0" "simple_shell man page"
+.SH NAME
+Name - TEXT
+.SH SYNOPSIS
+#include "simple_shell.h"
+
+.Sh BUGS
+Report bugs to Laura Villan (laura.villan@holbertonschool.com) or Emma Navarro Millán (emma.navarro@holbertonschool.com)
+.Sh AUTHORS
+Laura Villan & Emma Navarro Millán
