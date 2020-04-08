@@ -5,19 +5,27 @@
   *
   * Return: input line
   */
-char *prompt(int *exit)
+char *prompt()
 {
 	char *line_buffer = NULL;
 	size_t length;
 	ssize_t read;
 
-	write(STDOUT_FILENO, "cisfun$ ", 8);
+	if(isatty(STDIN_FILENO))
+	{
+
+		write(STDOUT_FILENO, "cisfun$ ", 8);
+	}
 
 	read = getline(&line_buffer, &length, stdin);
 
-	if ((read == EOF) || (_strcmp(line_buffer, "exit\n") == 0))
+	if ((read == EOF) || (_strcmp(line_buffer, "exit\n", 4) == 0))
 	{
-		*exit = 2;
+		free(line_buffer);
+		if(read == EOF && isatty(STDIN_FILENO))
+		{
+			write(STDOUT_FILENO, "\n", 1);
+		}
 		return (NULL);
 	}
 	return (line_buffer);
