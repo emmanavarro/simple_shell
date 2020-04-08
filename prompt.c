@@ -5,7 +5,7 @@
   *
   * Return: input line
   */
-char *prompt(void)
+char *prompt(int *exit)
 {
 	char *line_buffer = NULL;
 	size_t length;
@@ -17,8 +17,8 @@ char *prompt(void)
 
 	if ((read == EOF) || (_strcmp(line_buffer, "exit\n") == 0))
 	{
-		free(line_buffer);
-		exit(0);
+		return (NULL);
+		*exit = 2;
 	}
 	return (line_buffer);
 }
