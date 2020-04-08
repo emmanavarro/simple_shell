@@ -17,8 +17,8 @@ char *prompt(int *exit)
 
 	if ((read == EOF) || (_strcmp(line_buffer, "exit\n") == 0))
 	{
-		return (NULL);
 		*exit = 2;
+		return (NULL);
 	}
 	return (line_buffer);
 }
