@@ -1,20 +1,5 @@
 #include "shell.h"
 /**
- * _strlen - returns the length of a string.
- *@s: char
- * Return: i
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-/**
  * get_token - get the command line and tokenize it
  * @str: command line
  *
@@ -59,7 +44,7 @@ char **get_token(char *str)
 		count++;
 		tok = strtok(NULL, " \t\n\r");
 	}
-	tokens[count] = NULL;
+	tokens[count] = tok;
 	free(buff);
 	return (tokens);
 }
