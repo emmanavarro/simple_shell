@@ -12,7 +12,7 @@
 #include <sys/wait.h>
 
 char *_strcpy(char *dest, char *src);
-int _strcmp(char *s1, char *s2);
+int _strncmp(char *s1, char *s2, int n);
 char *_memset(char *s, char b, unsigned int n);
 void *_calloc(unsigned int nmemb, unsigned int size);
 char *_strcat(char *dest, char *src);
