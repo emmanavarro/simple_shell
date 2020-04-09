@@ -22,7 +22,6 @@ char *_strdup(char *str);
 char *prompt();
 char **get_token(char *str);
 char *find_path(char **env);
-char *split(char **enviro, char *str);
-char *check_path(char **ev, char*str);
+char *split_check(char **enviro, char *str);
 
 #endif /* _SHELL_H*/
