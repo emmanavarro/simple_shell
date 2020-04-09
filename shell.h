@@ -17,11 +17,12 @@ char *_memset(char *s, char b, unsigned int n);
 void *_calloc(unsigned int nmemb, unsigned int size);
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);
+char *_strdup(char *str);
 
 char *prompt();
 char **get_token(char *str);
 char *find_path(char **env);
-char **split(char **enviro);
+char *split(char **enviro, char *str);
 char *check_path(char **ev, char*str);
 
 #endif /* _SHELL_H*/
