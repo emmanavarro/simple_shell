@@ -14,39 +14,42 @@ char *find_path(char **env)
 		j++;
 	}
 	store_path = strtok(NULL, "\n");
-
 	return (store_path);
 }
-char **split(char **enviro)
+char *split(char **enviro, char *str)
 {
-	char *cpy_path = find_path(enviro);
-	char **store_dir = NULL;
+	char *cpy_path = NULL, *path = NULL;
+	cpy_path = find_path(enviro);
+	char **store_dir;
 	char *tok = NULL;
+	char *dir = NULL;
 	int pos = 0;
+	struct stat st;
+	store_dir = _calloc(8, sizeof(char *));
 
+	if (store_dir == NULL)
+	{
+		return NULL;
+	}
 	tok = strtok(cpy_path, ":");
 	while (tok != NULL)
 	{
-		_strcpy(store_dir[pos], tok);
+		dir = _strdup(tok);
+		store_dir[pos] = dir;
 		tok = strtok(NULL, ":");
 		pos++;
 	}
-	return (store_dir);
-}
-char *check_path(char **ev, char *str)
-{
-	char **cmp_dir = split(ev);
-	struct stat st;
-	char *path = NULL;
-	int count = 0;
-	
-	while (cmp_dir[count] != NULL)
+	pos = 0;
+	while(store_dir[pos] != NULL)
 	{
-		path = strcat(cmp_dir[count], "/");
-		path = strcat(cmp_dir[count], str);
+		path = _strcat(store_dir[pos], "/");
+		path = _strcat(store_dir[pos], str);
 		if (stat(path, &st) == 0)
 			return (path);
-		count++;
+		pos++;
 	}
+	while(store_dir && store_dir[pos])
+		free(store_dir[pos--]);
+	free(store_dir);
 	return (NULL);
 }
