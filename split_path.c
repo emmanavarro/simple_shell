@@ -30,8 +30,23 @@ char **split(char **enviro)
 		_strcpy(store_dir[pos], tok);
 		tok = strtok(NULL, ":");
 		pos++;
-
 	}
 	return (store_dir);
 }
-
+char *check_path(char **ev, char *str)
+{
+	char **cmp_dir = split(ev);
+	struct stat st;
+	char *path = NULL;
+	int count = 0;
+	
+	while (cmp_dir[count] != NULL)
+	{
+		path = strcat(cmp_dir[count], "/");
+		path = strcat(cmp_dir[count], str);
+		if (stat(path, &st) == 0)
+			return (path);
+		count++;
+	}
+	return (NULL);
+}
