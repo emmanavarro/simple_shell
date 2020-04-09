@@ -20,6 +20,7 @@ int _strlen(char *s);
 
 char *prompt();
 char **get_token(char *str);
-void split_path(char *str, char **env);
+char *find_path(char **env);
+char **split(char **enviro);
 
 #endif /* _SHELL_H*/
