@@ -1,5 +1,22 @@
 #include "shell.h"
 /**
+ * _strlen -  returns the length of a string.
+ *@s: char
+ * Return: i
+ */
+
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+
+}
+/**
  *_strncmp -  function that compares two strings.
  *@s1: string
  *@s2: string
@@ -67,3 +84,4 @@ char *_strcat(char *dest, char *src)
 	}
 	return (dest);
 }
+
