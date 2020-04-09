@@ -19,7 +19,7 @@ char *prompt()
 
 	read = getline(&line_buffer, &length, stdin);
 
-	if ((read == EOF) || (_strcmp(line_buffer, "exit\n", 4) == 0))
+	if ((read == EOF) || (_strncmp(line_buffer, "exit\n", 4) == 0))
 	{
 		free(line_buffer);
 		if(read == EOF && isatty(STDIN_FILENO))
