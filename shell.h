@@ -11,6 +11,17 @@
 #include <string.h>
 #include <sys/wait.h>
 
+/*
+* struct command - struct that contains the basic commands
+* @name: name of the command
+* @path: location of the command
+*/
+typedef struct command
+{
+    char *name;
+    char *path;
+}com_s;
+
 char *_strcpy(char *dest, char *src);
 int _strncmp(char *s1, char *s2, int n);
 char *_memset(char *s, char b, unsigned int n);
@@ -23,5 +34,6 @@ char *prompt();
 char **get_token(char *str);
 char *find_path(char **env);
 char *split_check(char **enviro, char *str);
+char *basic_command(char *str);
 
 #endif /* _SHELL_H*/
