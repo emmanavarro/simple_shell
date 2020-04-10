@@ -33,37 +33,31 @@ char *find_path(char **env)
 char *split_check(char **enviro, char *str)
 {
 	char *cpy_path = NULL, *path = NULL;
-	char **store_dir;
 	char *tok = NULL;
-	char *dir = NULL;
-	int pos = 0;
 	struct stat st;
 
 	cpy_path = find_path(enviro);
-	store_dir = _calloc(8, sizeof(char *));
-
-	if (store_dir == NULL)
-	{
-		return (NULL);
-	}
 	tok = strtok(cpy_path, ":");
 	while (tok != NULL)
 	{
-		dir = _strdup(tok);
-		store_dir[pos] = dir;
+		path = malloc(sizeof(char *) * (_strlen(tok) + 1 + _strlen(str)));
+		if (path == NULL)
+		{
+			return (NULL);
+		}
 
-		path = _strcat(store_dir[pos], "/");
-		path = _strcat(store_dir[pos], str);
+
+	         _strcpy(path, tok);
+		_strcat(path, "/");
+		_strcat(path, str);
+		printf("ES EL PATH: %s\n", path);
 
 		if (stat(path, &st) == 0)
 		{
-			while (store_dir && store_dir[pos])
-				free(store_dir[pos--]);
-			free(store_dir);
 			return (path);
 		}
+		free(path);
 		tok = strtok(NULL, ":");
-		pos++;
 	}
 
 	return (NULL);
