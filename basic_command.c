@@ -27,7 +27,7 @@ char *basic_command(char *str)
 	{
 		if (_strncmp(str, command[pos].name, _strlen(command[pos].name)) == 0)
 		{
-			return (comman[pos].path);
+			return (command[pos].path);
 		}
 		pos++;
 	}
