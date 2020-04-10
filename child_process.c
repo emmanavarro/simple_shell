@@ -9,6 +9,8 @@ void child_process(char **env, char **argv)
 {
 	struct stat st;
 	char *str = NULL;
+	int status = 0;
+	pid_t son;
 
 	if (stat(argv[0], &st) == 0)
 		str = argv[0];
@@ -24,11 +26,11 @@ void child_process(char **env, char **argv)
 		if (!son)
 		{
 			if (execve(str, argv, env) == -1)
-				perror("%s: cannot access %s: No such file or directory", str, argv[1]);
+				perror("cannot access, No such file or directory");
 		}
 		else
 			wait(&status);
 	}
 	else
-		perror("%s: command not found", str);
+		perror("command not found");
 }
