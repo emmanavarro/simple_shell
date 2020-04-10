@@ -45,13 +45,10 @@ char *split_check(char **enviro, char *str)
 		{
 			return (NULL);
 		}
-
-
-	         _strcpy(path, tok);
+	    _strcpy(path, tok);
 		_strcat(path, "/");
 		_strcat(path, str);
-		printf("ES EL PATH: %s\n", path);
-
+		
 		if (stat(path, &st) == 0)
 		{
 			return (path);
