@@ -10,6 +10,7 @@
 #include <sys/stat.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <errno.h>
 
 /*
 * struct command - struct that contains the basic commands
@@ -35,5 +36,6 @@ char **get_token(char *str);
 char *find_path(char **env);
 char *split_check(char **enviro, char *str);
 char *basic_command(char *str);
+void child_process(char **env, char **argv);
 
 #endif /* _SHELL_H*/
