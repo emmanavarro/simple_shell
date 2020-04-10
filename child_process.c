@@ -30,6 +30,7 @@ void child_process(char **env, char **argv)
 		}
 		else
 			wait(&status);
+			free(str);
 	}
 	else
 		perror("command not found");
