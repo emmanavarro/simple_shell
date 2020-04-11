@@ -45,7 +45,8 @@ char *split_check(char **enviro, char *str)
 		{
 			return (NULL);
 		}
-	    _strcpy(path, tok);
+		printf("te di memoria\n");
+	   	 _strcpy(path, tok);
 		_strcat(path, "/");
 		_strcat(path, str);
 		
