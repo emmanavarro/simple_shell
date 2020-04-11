@@ -13,7 +13,7 @@ int main(int ac, char *av[], char **env)
 	(void)av;
 	char *str = NULL;
 	char **array = NULL;
-	int out = 1, i = 0;
+	int out = 1, i = 0, r = 0;
 
 	while (out == 1)
 	{
@@ -26,16 +26,21 @@ int main(int ac, char *av[], char **env)
 		else
 		{
 			array = get_token(str);
+
 			if (str && _strncmp(str, "\n", 1) && array[0])
 			{
-				child_process(env, array);
+				r = child_process(env, array);
+				if (r != 0)
+					return (r);
 				free(str);
+				i = 0;
+				while (array && array[i])
+				{
+					free(array[i++]);
+				}
+				free(array);
 			}
 		}
 	}
-	while (array && array[i])
-		free(array[i++]);
-	free(array);
-	free(str);
 	return (0);
 }
