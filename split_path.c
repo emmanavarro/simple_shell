@@ -15,13 +15,15 @@ char *find_path(char **env)
 
 	store_path = strtok(cpy_env, "=");
 
-	while (_strncmp("PATH", store_path, 4) && store_path  && env[j])
+	do
 	{
 		cpy_env = env[j];
 		store_path = strtok(cpy_env, "=");
 		j++;
-	}
+	}while ((_strncmp(store_path, "PATH", 4) != 0));
+
 	store_path = strtok(NULL, "\n");
+	printf("Store Path: %s\n", store_path);
 	return (store_path);
 }
 /**
