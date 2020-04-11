@@ -45,11 +45,9 @@ char *split_check(char **enviro, char *str)
 		{
 			return (NULL);
 		}
-		printf("te di memoria\n");
-	   	 _strcpy(path, tok);
+		_strcpy(path, tok);
 		_strcat(path, "/");
 		_strcat(path, str);
-		
 		if (stat(path, &st) == 0)
 		{
 			return (path);
@@ -57,6 +55,5 @@ char *split_check(char **enviro, char *str)
 		free(path);
 		tok = strtok(NULL, ":");
 	}
-
 	return (NULL);
 }
