@@ -10,7 +10,7 @@ int child_process(char **env, char **argv)
 {
 	struct stat st;
 	char *str = NULL;
-	int status = 0;
+	int status = 0, i;
 	pid_t son;
 
 	if (stat(argv[0], &st) == 0)
@@ -29,6 +29,14 @@ int child_process(char **env, char **argv)
 		son = fork();
 		if (!son)
 		{
+			i = 0;
+			while(argv[i] != NULL)
+			{
+				printf("Los argv: %s\n", argv[i]);
+				i++;
+			}
+			printf("soy Str:");
+
 			if (execve(str, argv, env) == -1)
 				perror("cannot access, No such file or directory");
 				return (127);
