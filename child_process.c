@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
-* child_process - create a child process to execute the command
-* @env: environment
-* @argv: arguments to verify
-*/
+ * child_process - create a child process to execute the command
+ * @env: environment
+ * @argv: arguments to verify
+ */
 void child_process(char **env, char **argv)
 {
 	struct stat st;
@@ -36,45 +36,25 @@ void child_process(char **env, char **argv)
 		p++;
 
 	}
-
-	son = fork();
-	if (son == 0)
+	if (str)
 	{
-		if (str)
+		son = fork();
+		if (!son)
 		{
 			if (execve(str, argv, env) == -1)
-			{
 				perror("cannot access, No such file or directory");
-				if (d == 1)
-				{
-					printf("se libero");
-					
-				}
-			}
-			else
-			{
-				printf("se libero 2");
-				free(str);
-			}
 		}
 		else
-		{
-			free(str);
-		}
-
 			wait(&status);
-			free(str);
 	}
 	else
-	{
-		wait(&status);
-	}
+		perror("command not found");
 	p = 0;
 	while(argv[p] != NULL)
 	{
-		 printf("estoy en child argv: %s\n", argv[p]);
-		 p++;
+		printf("estoy en child argv: %s\n", argv[p]);
+		p++;
 	}	
 
-		printf("ya no estoy aqui\n");
+	printf("ya no estoy aqui\n");
 }
