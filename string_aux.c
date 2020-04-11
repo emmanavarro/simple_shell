@@ -4,7 +4,6 @@
  *@s: char
  * Return: i
  */
-
 int _strlen(char *s)
 {
 	int i = 0;
@@ -14,42 +13,43 @@ int _strlen(char *s)
 		i++;
 	}
 	return (i);
-
 }
+
 /**
  *_strncmp -  function that compares two strings.
- *@s1: string
- *@s2: string
+ *@s1: string one
+ *@s2: string two
  *@n: number of characters
- * Return: diferencia
+ * Return: diference
  */
-int _strncmp(char *s1, char *s2, int n)
+int _strncmp(const char *s1, const char *s2, size_t n)
 {
-	int i, diferencia;
+	int i = 0, j = 0;
 
-	i = 0;
-	diferencia = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && diferencia == 0 && i < n)
+	while (n && s1[i] && (s1[i] == s2[j]))
 	{
-		if (s1[i] != s2[i])
-		{
-			diferencia = s1[i] - s2[i];
-		}
 		i++;
-
+		j++;
+		n--;
 	}
-	return (diferencia);
+	if (n == 0)
+	{
+		return (0);
+	}
+	else
+	{
+		return (s1[i] - s2[j]);
+	}
 }
+
 /**
  * _strcpy - unction that copies the string pointed to by src
  *@dest: char
  *@src:_ char
  * Return: dest
  */
-
 char *_strcpy(char *dest, char *src)
 {
-
 	int i = 0, j;
 
 	while (src[i] != '\0')
@@ -62,6 +62,7 @@ char *_strcpy(char *dest, char *src)
 	}
 	return (dest);
 }
+
 /**
  *_strcat -  function that concatenates two strings.
  *@dest: char
@@ -84,34 +85,4 @@ char *_strcat(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-/**
- *_strdup - function that returns a pointer
- *@str: char
- * Return: s
- */
-char *_strdup(char *str)
-{
-	int j, l;
-	char *s;
-
-	if (!str)
-	{
-		return (NULL);
-	}
-
-	l = _strlen(str) + 1;
-
-	s = malloc(l * sizeof(char));
-	if (!s)
-	{
-		return (NULL);
-
-	}
-
-	for (j = 0; j < l; j++)
-	{
-		s[j] = str[j];
-	}
-	return (s);
 }
