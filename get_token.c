@@ -22,7 +22,7 @@ char **get_token(char *str)
 		count++;
 		tok = strtok(NULL, " \t\n\r");
 	}
-	tokens = _calloc((count + 1), sizeof(char *));
+	tokens = _calloc((count + 2), sizeof(char *));
 	if (tokens == NULL)
 	{
 		free(buff);
@@ -32,7 +32,7 @@ char **get_token(char *str)
 	count = 0;
 	while (tok)
 	{
-		tokens[count] = malloc(sizeof(char) * _strlen(tok) + 1);
+		tokens[count] = malloc(sizeof(char) * _strlen(tok) + 2);
 		if (tokens[count] == NULL)
 		{
 			for (i = 0; tokens[count]; i++)
@@ -44,7 +44,7 @@ char **get_token(char *str)
 		count++;
 		tok = strtok(NULL, " \t\n\r");
 	}
-	tokens[count] = tok;
+	tokens[count] = NULL;
 	free(buff);
 	return (tokens);
 }
