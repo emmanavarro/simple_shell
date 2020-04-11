@@ -58,15 +58,12 @@ void child_process(char **env, char **argv)
 			}
 		}
 		else
-<<<<<<< HEAD
 		{
 			free(str);
 		}
 
-=======
 			wait(&status);
 			free(str);
->>>>>>> c3d0b38051396f87a87877c8c66404c96ca8bac7
 	}
 	else
 	{
