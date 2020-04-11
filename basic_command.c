@@ -21,6 +21,7 @@ char *basic_command(char *str)
 			{"mv", "/bin/mv"},
 			{"chmod", "/bin/chmod"},
 			{"kill", "/bin/kill"},
+			{"env", "/usr/bin/env"},
 			{NULL, NULL}};
 
 	while (command[pos].name != NULL)
