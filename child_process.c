@@ -33,11 +33,15 @@ int child_process(char **env, char **argv, char *av, int count)
 			{
 				sprintf(err_msg, "%s: %d: %s: not found\n", av, count, argv[0]);
 				write(2, err_msg, _strlen(err_msg));
+				free(str);
 				return (127);
 			}
 		}
 		else
+		{
 			wait(&status);
+			free(str);
+		}
 	}
 	else
 	{
