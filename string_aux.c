@@ -86,3 +86,31 @@ char *_strcat(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
+
+/**
+ *_strdup - function that returns a pointer
+ *@str: char
+ * Return: s
+ */
+char *_strdup(char *str)
+{
+	int j, l;
+	char *s;
+
+	if (!str)
+	{
+		return (NULL);
+	}
+	l = _strlen(str) + 1;
+
+	s = malloc(l * sizeof(char));
+	if (!s)
+	{
+		return (NULL);
+	}
+	for (j = 0; j < l; j++)
+	{
+		s[j] = str[j];
+	}
+	return (s);
+}
