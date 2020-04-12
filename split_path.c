@@ -8,23 +8,14 @@
 
 char *find_path(char **env)
 {
-	int j = 0;
-	char *cpy_env = NULL, *store_path = NULL;
+	int i = 0;
+	char *cpy_env = NULL;
 
-	cpy_env = env[j];
-
-	store_path = strtok(cpy_env, "=");
-
-	do
-	{
-		cpy_env = env[j];
-		store_path = strtok(cpy_env, "=");
-		j++;
-	}while ((_strncmp(store_path, "PATH", 4) != 0));
-
-	store_path = strtok(NULL, "\n");
-	printf("Store Path: %s\n", store_path);
-	return (store_path);
+	for (i = 0; env[i] != NULL; i++)
+		if (_strncmp(env[i], "PATH=", 5) == 0)
+			break;
+	cpy_env = strdup(env[i]);
+	return (cpy_env);
 }
 /**
  * split_check - divide the elements and check the path
@@ -34,17 +25,20 @@ char *find_path(char **env)
  */
 char *split_check(char **enviro, char *str)
 {
-	char *cpy_path = NULL, *path = NULL;
+	char *cpy_path = NULL, *path = NULL, *cpy_env = NULL;
 	char *tok = NULL;
 	struct stat st;
 
-	cpy_path = find_path(enviro);
+	cpy_env = find_path(enviro);
+	cpy_path = _strdup(cpy_env);
+	free(cpy_env);
 	tok = strtok(cpy_path, ":");
 	while (tok != NULL)
 	{
 		path = malloc(sizeof(char *) * (_strlen(tok) + 1 + _strlen(str)));
 		if (path == NULL)
 		{
+			free(path);
 			return (NULL);
 		}
 		_strcpy(path, tok);
@@ -52,10 +46,12 @@ char *split_check(char **enviro, char *str)
 		_strcat(path, str);
 		if (stat(path, &st) == 0)
 		{
+			free(cpy_path);
 			return (path);
 		}
 		free(path);
 		tok = strtok(NULL, ":");
 	}
+	free(cpy_path);
 	return (NULL);
 }
