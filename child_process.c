@@ -4,12 +4,14 @@
  * child_process - create a child process to execute the command
  * @env: environment
  * @argv: arguments to verify
+ * @av: program name
+ * @count: counter to executions
  * Return: 0 success, 127 error
  */
-int child_process(char **env, char **argv)
+int child_process(char **env, char **argv, char *av, int count)
 {
 	struct stat st;
-	char *str = NULL;
+	char *str = NULL, err_msg[100];
 	int status = 0, i;
 	pid_t son;
 
@@ -17,8 +19,6 @@ int child_process(char **env, char **argv)
 		str = argv[0];
 	else
 	{
-		str = basic_command(argv[0]);
-
 		if (str == NULL)
 		{
 			str = split_check(env, argv[0]);
@@ -29,22 +29,21 @@ int child_process(char **env, char **argv)
 		son = fork();
 		if (!son)
 		{
-			i = 0;
-			while(argv[i] != NULL)
-			{
-				printf("Los argv: %s\n", argv[i]);
-				i++;
-			}
-			printf("soy Str:");
-
 			if (execve(str, argv, env) == -1)
-				perror("cannot access, No such file or directory");
+			{
+				sprintf(err_msg, "%s: %d: %s: not found\n", av, count, argv[0]);
+				write(2, err_msg, _strlen(err_msg));
 				return (127);
+			}
 		}
 		else
 			wait(&status);
 	}
 	else
-		perror("command not found");
+	{
+		sprintf(err_msg, "%s: %d: %s: not found\n", av, count, argv[0]);
+		write(2, err_msg, _strlen(err_msg));
+		free(str);
+	}
 	return (0);
 }
