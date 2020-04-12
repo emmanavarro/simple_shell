@@ -25,6 +25,12 @@ Your shell will be compiled this way:
 
 `gcc -Wall -Werror -Wextra -pedantic *.c`
 
+## 📥Trying out our Simple Shell
+
+You can download this repository like this:
+
+`git clone https://github.com/emmanavarro/simple_shell.git`
+
 ## 📑Testing
 
 Shells may be used interactively or non-interactively. In interactive mode, they accept input typed from the keyboard. When executing non-interactively, shells execute commands read from a file.
@@ -42,3 +48,5 @@ And also in non-interactive mode:
 
 **Emma Navarro Millán** ![GitHub followers](https://img.shields.io/github/followers/emmanavarro?label=Follow&style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/Ayy_Emma?label=%40Ayy_Emma&style=social)
+
+## Made in
