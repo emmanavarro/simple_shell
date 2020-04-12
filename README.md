@@ -1,3 +1,5 @@
+![GitHub contributors](https://img.shields.io/github/contributors/emmanavarro/simple_shell?style=plastic)
+
 # Simple shell
 
 This project is about building a simpler version of the Unix shell using the C programming language.
@@ -47,12 +49,8 @@ $
 ```
 ## Authors
 
-**Laura Villan**
+[**Laura Villan**](https://github.com/laucavv)
+![Twitter Follow](https://img.shields.io/twitter/follow/laucavv23?label=%40laucavv23&style=social)
 
-- Twitter: [@laucavv23](https://twitter.com/laucavv23)
-- Github: [@laucavv](https://github.com/laucavv)
-
-**Emma Navarro Millán**
-
-- Twitter: [@Ayy_Emma](https://twitter.com/Ayy_Emma)
-- Github: [@emmanavarro](https://github.com/emmanavarro)
+[**Emma Navarro Millán**](https://github.com/emmanavarro)
+![Twitter Follow](https://img.shields.io/twitter/follow/Ayy_Emma?label=%40Ayy_Emma&style=social)
