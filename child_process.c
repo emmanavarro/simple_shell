@@ -12,7 +12,7 @@ int child_process(char **env, char **argv, char *av, int count)
 {
 	struct stat st;
 	char *str = NULL, err_msg[100];
-	int status = 0, i;
+	int status = 0;
 	pid_t son;
 
 	if (stat(argv[0], &st) == 0)
