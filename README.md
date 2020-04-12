@@ -25,7 +25,7 @@ Your shell will be compiled this way:
 
 `gcc -Wall -Werror -Wextra -pedantic *.c`
 
-## 📥Trying out our Simple Shell
+## 📥Downloading
 
 You can download this repository like this:
 
@@ -41,6 +41,32 @@ Your shell should work like this in interactive mode:
 And also in non-interactive mode:
 ![nointereactive-2](https://user-images.githubusercontent.com/60374349/79060514-82f97780-7c4b-11ea-9a12-194710945f75.png)
 
+## 💻Trying out our Simple Shell
+
+Executing `ls -la`:
+
+![Example Simple shell](https://user-images.githubusercontent.com/55990484/79061150-b095ef00-7c52-11ea-8668-dd37c248dba9.png)
+
+Executing `mkdir`:
+
+![Example Simple shell 2](https://user-images.githubusercontent.com/55990484/79061180-11252c00-7c53-11ea-89c2-58f26d942ec5.png)
+
+Executing `pwd`:
+
+![Example Simple shell 3](https://user-images.githubusercontent.com/55990484/79061196-403b9d80-7c53-11ea-910c-bc9a22d4cefc.png)
+
+Executing `printenv`:
+
+![Example Simple shell 4](https://user-images.githubusercontent.com/55990484/79061214-5e090280-7c53-11ea-9316-19baf68c4fdd.png)
+
+Executing `cat`:
+
+![Example Simple shell 6](https://user-images.githubusercontent.com/55990484/79061247-af18f680-7c53-11ea-9cba-85ec1ab5299f.png)
+
+Executing `exit`:
+
+![Example Simple shell 5](https://user-images.githubusercontent.com/55990484/79061248-bf30d600-7c53-11ea-88aa-ea080a857f7e.png)
+
 ## 🚀Authors
 
 **Laura Villan** ![GitHub followers](https://img.shields.io/github/followers/laucavv?label=Follow&style=social)
@@ -50,3 +76,8 @@ And also in non-interactive mode:
 ![Twitter Follow](https://img.shields.io/twitter/follow/Ayy_Emma?label=%40Ayy_Emma&style=social)
 
 ## Made in
+![readme2](https://user-images.githubusercontent.com/60374349/77229662-224fb100-6b5d-11ea-89ff-188607b48859.png)
+
+**Holberton School - Foundations - Low-level programming & Algorithm**
+
+**April, 2020.**
