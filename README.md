@@ -1,10 +1,11 @@
+[![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![GitHub contributors](https://img.shields.io/github/contributors/emmanavarro/simple_shell?style=plastic)
 
 # Simple shell
 
 This project is about building a simpler version of the Unix shell using the C programming language.
 
-## Requirements
+## :heavy_check_mark:Requirements
 * All your files will be compiled on Ubuntu 14.04 LTS
 * Your C programs and functions will be compiled with gcc 4.8.4
 * All your files should end with a new line
@@ -49,8 +50,8 @@ $
 ```
 ## Authors
 
-[**Laura Villan**](https://github.com/laucavv)
+**Laura Villan** ![GitHub followers](https://img.shields.io/github/followers/laucavv?label=Follow&style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/laucavv23?label=%40laucavv23&style=social)
 
-[**Emma Navarro Millán**](https://github.com/emmanavarro)
+**Emma Navarro Millán** ![GitHub followers](https://img.shields.io/github/followers/emmanavarro?label=Follow&style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/Ayy_Emma?label=%40Ayy_Emma&style=social)
