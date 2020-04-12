@@ -1,7 +1,11 @@
 [![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![GitHub contributors](https://img.shields.io/github/contributors/emmanavarro/simple_shell?style=plastic)
 
-# Simple shell
+![simple](https://user-images.githubusercontent.com/60374349/79060145-12505c00-7c47-11ea-8eaf-d625418da2ca.png)
+
+At its base, a shell is simply a macro processor that executes commands. The term macro processor means functionality where text and symbols are expanded to create larger expressions.
+
+A Unix shell is both a command interpreter and a programming language. As a command interpreter, the shell provides the user interface to the rich set of GNU utilities. The shell is a program that takes commands from the keyboard and gives them to the operating system to perform On most Linux systems a program called bash (which stands for Bourne Again **Shell**, an enhanced version of the original Unix shell program, sh, written by Steve Bourne) acts as the shell program. [1](http://linuxcommand.org/lc3_lts0010.php)
 
 This project is about building a simpler version of the Unix shell using the C programming language.
 
@@ -22,6 +26,8 @@ Your shell will be compiled this way:
 `gcc -Wall -Werror -Wextra -pedantic *.c`
 
 ## 📑Testing
+
+Shells may be used interactively or non-interactively. In interactive mode, they accept input typed from the keyboard. When executing non-interactively, shells execute commands read from a file.
 
 Your shell should work like this in interactive mode:
 
