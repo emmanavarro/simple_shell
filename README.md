@@ -15,13 +15,13 @@ This project is about building a simpler version of the Unix shell using the C p
 * All your header files should be include guarded
 * Use system calls only when you need to
 
-## Compilation
+## ⚙Compilation 
 
 Your shell will be compiled this way:
 
 `gcc -Wall -Werror -Wextra -pedantic *.c`
 
-## Testing
+## 📑Testing
 
 Your shell should work like this in interactive mode:
 
@@ -48,7 +48,7 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
 ```
-## Authors
+## 🚀Authors
 
 **Laura Villan** ![GitHub followers](https://img.shields.io/github/followers/laucavv?label=Follow&style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/laucavv23?label=%40laucavv23&style=social)
