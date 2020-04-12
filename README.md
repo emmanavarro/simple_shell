@@ -30,30 +30,11 @@ Your shell will be compiled this way:
 Shells may be used interactively or non-interactively. In interactive mode, they accept input typed from the keyboard. When executing non-interactively, shells execute commands read from a file.
 
 Your shell should work like this in interactive mode:
+![nointereactive](https://user-images.githubusercontent.com/60374349/79060512-7a08a600-7c4b-11ea-951b-e519a943d79f.png)
 
-```
-$ ./hsh
-($) /bin/ls
-hsh main.c shell.c
-($)
-($) exit
-$
-```
 And also in non-interactive mode:
+![nointereactive-2](https://user-images.githubusercontent.com/60374349/79060514-82f97780-7c4b-11ea-9a12-194710945f75.png)
 
-```
-$ echo "/bin/ls" | ./hsh
-hsh main.c shell.c test_ls_2
-$
-$ cat test_ls_2
-/bin/ls
-/bin/ls
-$
-$ cat test_ls_2 | ./hsh
-hsh main.c shell.c test_ls_2
-hsh main.c shell.c test_ls_2
-$
-```
 ## 🚀Authors
 
 **Laura Villan** ![GitHub followers](https://img.shields.io/github/followers/laucavv?label=Follow&style=social)
