@@ -9,11 +9,11 @@
 */
 int main(int ac, char *av[], char **env)
 {
-	(void)ac;
-	(void)av;
 	char *str = NULL;
 	char **array = NULL;
 	int out = 1, i = 0, r = 0, count = 1;
+	(void)ac;
+	(void)av;
 
 	while (out == 1)
 	{
