@@ -11,7 +11,7 @@ char *prompt()
 	size_t length;
 	ssize_t read;
 
-	if(isatty(STDIN_FILENO))
+	if (isatty(STDIN_FILENO))
 	{
 
 		write(STDOUT_FILENO, "cisfun$ ", 8);
@@ -22,7 +22,7 @@ char *prompt()
 	if ((read == EOF) || (_strncmp(line_buffer, "exit\n", 4) == 0))
 	{
 		free(line_buffer);
-		if(read == EOF && isatty(STDIN_FILENO))
+		if (read == EOF && isatty(STDIN_FILENO))
 		{
 			write(STDOUT_FILENO, "\n", 1);
 		}
