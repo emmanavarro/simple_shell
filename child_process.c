@@ -12,7 +12,7 @@ int child_process(char **env, char **argv, char *av, int count)
 {
 	struct stat st;
 	char *str = NULL, err_msg[100];
-	int status = 0;
+	int status = 0, (*f)(char **env);
 	pid_t son;
 
 	if (stat(argv[0], &st) == 0)
@@ -20,10 +20,11 @@ int child_process(char **env, char **argv, char *av, int count)
 	else
 	{
 		if (str == NULL)
-		{
 			str = split_check(env, argv[0]);
-		}
 	}
+	f = basic_command(argv[0]);
+	if (f != NULL)
+		f(env), free(str), return(0);
 	if (str)
 	{
 		son = fork();
@@ -38,10 +39,7 @@ int child_process(char **env, char **argv, char *av, int count)
 			}
 		}
 		else
-		{
-			wait(&status);
-			free(str);
-		}
+			wait(&status), free(str);
 	}
 	else
 	{
