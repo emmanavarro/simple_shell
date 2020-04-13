@@ -68,7 +68,93 @@ the execution of the shell file will be aborted. Otherwise the shell will return
 builtin is used with a numeric argument, it will return the argument.
 
 .SH EXAMPLES
+Interactive mode:
 
+.RS +4
+$ ./hsh
+.RE
+.RS +4
+($) /bin/ls
+.RE
+.RS +4
+hsh main.c shell.c
+.RE
+.RS +4
+($)
+.RE
+.RS +4
+($) exit
+.RE
+.RS +4
+$
+
+.RE
+Non-interactive mode:
+
+.RS +4
+$ echo "/bin/ls" | ./hsh
+.RE
+.RS +4
+hsh main.c shell.c test_ls_2
+.RE
+.RS +4
+$
+.RE
+.RS +4
+$ cat test_ls_2
+.RE
+.RS +4
+/bin/ls
+.RE
+.RS +4
+/bin/ls
+.RE
+.RS +4
+$
+.RE
+.RS +4
+$ cat test_ls_2 | ./hsh
+.RE
+.RS +4
+hsh main.c shell.c test_ls_2
+.RE
+.RS +4
+hsh main.c shell.c test_ls_2
+.RE
+.RS +4
+$
+.PP
+
+.RE
+Running ls command:
+.RS +4
+cisfun$ ls
+.RE
+.RS +4
+AUTHORS         child_process.c         hsh         print_env.c         README.md           shell.h         string_aux.c
+basic_command.c         get_token.c			man_1_simple_shell			prompt.c		shell.c			split_path.c
+.RE
+
+.RE
+Running pwd command:
+.RS +4
+cisfun$ pwd
+.RE
+.RS +4
+/home/vagrant/simple_shell
+.RE
+
+.RE
+Running exit command:
+.RS +4
+cisfun$ exit
+.RE
+.RS +4
+vagrant@vagrant-ubuntu-trusty-64:~/simple_shell$
+.RE
+
+.SH SEE ALSO
+.I man sh
 
 .SH BUGS
 No known bugs.
@@ -76,4 +162,4 @@ No known bugs.
 Report bugs to Laura Villan (laura.villan@holbertonschool.com) or Emma Navarro Millán (emma.navarro@holbertonschool.com)
 
 .SH AUTHORS
-Laura Villan & Emma Navarro Millán
+Project made for Holberton School by Laura Villan & Emma Navarro Millán
