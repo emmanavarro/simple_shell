@@ -15,7 +15,6 @@ int print_env(char **env)
 		write(STDOUT_FILENO, "\n", 1);
 		i++;
 	}
-	printf("ESTA EN ENV\n");
 	return (0);
 }
 
