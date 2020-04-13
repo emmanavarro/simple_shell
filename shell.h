@@ -20,7 +20,7 @@
 typedef struct command
 {
 	char *name;
-	char *path;
+	int (*fun)(char **env);
 } com_s;
 
 char *_strcpy(char *dest, char *src);
@@ -35,7 +35,8 @@ char *prompt();
 char **get_token(char *str);
 char *find_path(char **env);
 char *split_check(char **enviro, char *str);
-char *basic_command(char *str);
+int (*basic_command(char *str))(char **env);
 int child_process(char **env, char **argv, char *av, int count);
+int print_env(char **env);
 
 #endif /* _SHELL_H*/
