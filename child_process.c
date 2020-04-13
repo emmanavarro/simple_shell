@@ -18,13 +18,14 @@ int child_process(char **env, char **argv, char *av, int count)
 	if (stat(argv[0], &st) == 0)
 		str = argv[0];
 	else
-	{
 		if (str == NULL)
 			str = split_check(env, argv[0]);
-	}
 	f = basic_command(argv[0]);
 	if (f != NULL)
-		f(env), free(str), return(0);
+	{
+		f(env), free(str);
+		return (0);
+	}
 	if (str)
 	{
 		son = fork();
