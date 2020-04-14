@@ -35,17 +35,17 @@ int child_process(char **env, char **argv, char *av, int count)
 			{
 				sprintf(err_msg, "%s: %d: %s: not found\n", av, count, argv[0]);
 				write(2, err_msg, _strlen(err_msg));
-				(i == 1) ? free(str) : i;
+				(i == 1) ? free(str) : (void) i ;
 			}
 		}
 		else
-			wait(&status), (i == 1) ? free(str) : i;
+			wait(&status), (i == 1) ? free(str) : (void) i;
 	}
 	else
 	{
 		sprintf(err_msg, "%s: %d: %s: not found\n", av, count, argv[0]);
 		write(2, err_msg, _strlen(err_msg));
-		(i == 1) ? free(str) : i;
+		(i == 1) ? free(str) : (void) i;
 		return (127);
 	}
 	return (0);
