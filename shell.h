@@ -15,7 +15,7 @@
 /**
 * struct command - struct that contains the basic commands
 * @name: name of the command
-* @path: location of the command
+* @fun: pointer to a function
 */
 typedef struct command
 {
