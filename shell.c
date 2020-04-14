@@ -11,7 +11,7 @@ int main(int ac, char *av[], char **env)
 {
 	char *str = NULL;
 	char **array = NULL;
-	int out = 1, i = 0, r = 0, count = 1, j;
+	int out = 1, i = 0, count = 1;
 	(void)ac;
 	(void)av;
 
@@ -29,12 +29,7 @@ int main(int ac, char *av[], char **env)
 
 			if (str && _strncmp(str, "\n", 1) && array[0])
 			{
-				j = 0;
-				r = child_process(env, array, av[0], count);
-				if (r != 0)
-				{
-					j = r;
-				}
+				child_process(env, array, av[0], count);
 				free(str);
 				i = 0;
 				while (array && array[i])
@@ -46,5 +41,5 @@ int main(int ac, char *av[], char **env)
 		}
 		count++;
 	}
-	return (j);
+	return (0);
 }
