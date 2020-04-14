@@ -40,6 +40,7 @@ int child_process(char **env, char **argv, char *av, int count)
 		}
 		else
 			wait(&status), (i == 1) ? free(str) : (void) i;
+			return (2);
 	}
 	else
 	{
