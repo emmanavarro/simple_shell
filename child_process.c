@@ -35,7 +35,7 @@ int child_process(char **env, char **argv, char *av, int count)
 			{
 				sprintf(err_msg, "%s: %d: %s: not found\n", av, count, argv[0]);
 				write(2, err_msg, _strlen(err_msg));
-				(i == 1) ? free(str) : (void) i ;
+				(i == 1) ? free(str) : (void) i;
 			}
 		}
 		else
