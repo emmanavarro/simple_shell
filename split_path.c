@@ -14,7 +14,7 @@ char *find_path(char **env)
 	for (i = 0; env[i] != NULL; i++)
 		if (_strncmp(env[i], "PATH=", 5) == 0)
 			break;
-	cpy_env = strdup(env[i]);
+	cpy_env = _strdup(env[i]);
 	return (cpy_env);
 }
 /**
