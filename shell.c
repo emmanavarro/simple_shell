@@ -11,39 +11,33 @@ int main(int ac, char *av[], char **env)
 {
 	char *str = NULL;
 	char **array = NULL;
-	int out = 1, i = 0, count = 1, r = 0;
+	int out = 1, count = 1, r = 0;
 	(void)ac;
 	(void)av;
 
 	while (out == 1)
 	{
 		str = prompt();
-
 		if (str == NULL)
-		{
 			out = 2;
-		}
 		else
 		{
 			array = get_token(str);
-
 			if (str && _strncmp(str, "\n", 1) && array[0])
 			{
-				r = child_process(env, array, av[0], count);
-				i = 0;
-				while (array && array[i])
+				if (_strncmp(array[0], "env", 3) == 0)
 				{
-					free(array[i++]);
+					print_env(env);
+					continue;
 				}
-				free(array), free(str);
+				r = child_process(env, array, av[0], count);
+				free_mem(array);
+				free(str);
 			}
 			else
 			{
-				while (array && array[i])
-				{
-					free(array[i++]);
-				}
-				free(array), free(str);
+				free_mem(array);
+				free(str);
 			}
 		}
 		count++;
