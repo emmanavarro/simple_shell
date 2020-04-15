@@ -22,22 +22,25 @@ int main(int ac, char *av[], char **env)
 			out = 2;
 		else
 		{
-			array = get_token(str);
-			if (str && _strncmp(str, "\n", 1) && array[0])
+			if (_strncmp(str, "env", 3) == 0)
 			{
-				if (_strncmp(array[0], "env", 3) == 0)
-				{
-					print_env(env);
-					continue;
-				}
-				r = child_process(env, array, av[0], count);
-				free_mem(array);
+				print_env(env);
 				free(str);
 			}
 			else
 			{
-				free_mem(array);
-				free(str);
+				array = get_token(str);
+				if (str && _strncmp(str, "\n", 1) && array[0])
+				{
+					r = child_process(env, array, av[0], count);
+					free_mem(array);
+					free(str);
+				}
+				else
+				{
+					free_mem(array);
+					free(str);
+				}
 			}
 		}
 		count++;
