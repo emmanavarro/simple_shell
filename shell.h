@@ -30,6 +30,7 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);
 char *_strdup(char *str);
+void free_mem(char **array);
 
 char *prompt();
 char **get_token(char *str);
