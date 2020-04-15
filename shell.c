@@ -30,13 +30,20 @@ int main(int ac, char *av[], char **env)
 			if (str && _strncmp(str, "\n", 1) && array[0])
 			{
 				r = child_process(env, array, av[0], count);
-				free(str);
 				i = 0;
 				while (array && array[i])
 				{
 					free(array[i++]);
 				}
-				free(array);
+				free(array), free(str);
+			}
+			else
+			{
+				while (array && array[i])
+				{
+					free(array[i++]);
+				}
+				free(array), free(str);
 			}
 		}
 		count++;
