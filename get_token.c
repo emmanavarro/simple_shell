@@ -16,11 +16,11 @@ char **get_token(char *str)
 	if (buff == NULL)
 		return (NULL);
 	_strcpy(buff, str);
-	tok = strtok(str, " \t\n\r");
+	tok = strtok(str, " \t\n\r\a");
 	while (tok)
 	{
 		count++;
-		tok = strtok(NULL, " \t\n\r");
+		tok = strtok(NULL, " \t\n\r\a");
 	}
 	tokens = _calloc((count + 2), sizeof(char *));
 	if (tokens == NULL)
@@ -28,7 +28,7 @@ char **get_token(char *str)
 		free(buff);
 		return (NULL);
 	}
-	tok = strtok(buff, " \t\n\r");
+	tok = strtok(buff, " \t\n\r\a");
 	count = 0;
 	while (tok)
 	{
@@ -42,7 +42,7 @@ char **get_token(char *str)
 		}
 		_strcpy(tokens[count], tok);
 		count++;
-		tok = strtok(NULL, " \t\n\r");
+		tok = strtok(NULL, " \t\n\r\a");
 	}
 	tokens[count] = NULL;
 	free(buff);
