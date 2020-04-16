@@ -13,7 +13,6 @@ char *prompt()
 
 	if (isatty(STDIN_FILENO))
 	{
-
 		write(STDOUT_FILENO, "cisfun$ ", 8);
 	}
 
