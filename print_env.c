@@ -18,3 +18,12 @@ int print_env(char **env)
 	return (0);
 }
 
+/**
+* sign_c - sends a signal when ctrl + C is entered
+* @sig: input
+*/
+void sign_c(int sig)
+{
+	if (sig == SIGINT)
+		write(STDOUT_FILENO, "\ncisfun$ ", 9);
+}

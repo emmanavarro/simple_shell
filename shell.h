@@ -11,6 +11,7 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <errno.h>
+#include <signal.h>
 
 /**
 * struct command - struct that contains the basic commands
@@ -31,6 +32,7 @@ char *_strcat(char *dest, char *src);
 int _strlen(char *s);
 char *_strdup(char *str);
 void free_mem(char **array);
+void sign_c(int sig);
 
 char *prompt();
 char **get_token(char *str);

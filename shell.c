@@ -12,8 +12,9 @@ int main(int ac, char *av[], char **env)
 	char *str = NULL;
 	char **array = NULL;
 	int out = 1, count = 1, r = 0;
-	(void)ac;
-	(void)av;
+	(void)ac, (void)av;
+
+	signal(SIGINT, sign_c);
 
 	while (out == 1)
 	{
