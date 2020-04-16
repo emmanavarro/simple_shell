@@ -15,9 +15,13 @@ char *find_path(char **env)
 		return (NULL);
 
 	for (i = 0; env[i] != NULL; i++)
+	{
 		if (_strncmp(env[i], "PATH=", 5) == 0)
+		{
+			cpy_env = _strdup(env[i]);
 			break;
-	cpy_env = _strdup(env[i]);
+		}
+	}
 	return (cpy_env);
 }
 /**
@@ -35,9 +39,10 @@ char *split_check(char **enviro, char *str)
 	cpy_env = find_path(enviro);
 	if (cpy_env == NULL)
 		return (NULL);
+
 	cpy_path = _strdup(cpy_env);
 	free(cpy_env);
-	tok = strtok(cpy_path, ":");
+	tok = strtok(cpy_path, "=:");
 	while (tok != NULL)
 	{
 		path = malloc(sizeof(char *) * (_strlen(tok) + 1 + _strlen(str)));
