@@ -67,6 +67,10 @@ Executing `exit`:
 
 ![Example Simple shell 5](https://user-images.githubusercontent.com/55990484/79061248-bf30d600-7c53-11ea-88aa-ea080a857f7e.png)
 
+## 📈Flowchart
+
+![SHELL PHASES](https://user-images.githubusercontent.com/55990484/79514996-1694c480-800d-11ea-85d6-a800c684a28c.png)
+
 ## 🚀Authors
 
 **Laura Villan** ![GitHub followers](https://img.shields.io/github/followers/laucavv?label=Follow&style=social)
