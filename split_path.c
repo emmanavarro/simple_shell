@@ -19,10 +19,10 @@ char *find_path(char **env)
 		if (_strncmp(env[i], "PATH=", 5) == 0)
 		{
 			cpy_env = _strdup(env[i]);
-			break;
+			return (cpy_env);
 		}
 	}
-	return (cpy_env);
+	return (NULL);
 }
 /**
  * split_check - divide the elements and check the path
@@ -60,7 +60,7 @@ char *split_check(char **enviro, char *str)
 			return (path);
 		}
 		free(path);
-		tok = strtok(NULL, ":");
+		tok = strtok(NULL, "=:");
 	}
 	free(cpy_path);
 	return (NULL);
